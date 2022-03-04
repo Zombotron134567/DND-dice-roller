@@ -54,6 +54,9 @@ footer{
   justify-content: center;
 
 }
+.hist{
+  min-height: 21px;
+}
 .baseStyle--reset{
   background-color: #9a2323;
 }
