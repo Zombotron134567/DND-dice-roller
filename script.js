@@ -9,6 +9,7 @@ let dicetray = {
 let modifie = 0;
 function modifier() {
   modifie = 0;
+  document.querySelector(`.modif`).value = modifie;
 }
 let diceresult = [];
 function dicenum(dicetype) {  
