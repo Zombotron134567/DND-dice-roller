@@ -8,7 +8,7 @@ let dicetray = {
   };
 let modifie = 0;
 function modifier() {
-  modifie = document.querySelector(`.modif`).valueAsNumber
+  modifie = 0;
 }
 let diceresult = [];
 function dicenum(dicetype) {  
@@ -33,9 +33,10 @@ function roll() {
     }
     i++;
   }
+  modifie = document.querySelector(`.modif`).valueAsNumber;
   total += modifie;
   render();
-  document.querySelector("#total").innerHTML = total;
+  document.querySelector("#total").innerHTML = " + " + modifie + " = " + total;
 };
 
 function render(){
@@ -45,8 +46,11 @@ function render(){
     if (dicetray[dice] != 0){
       rolls += `<li class = "baseStyle--hist">${dicetray[dice]}${dice} = `;
       for (let i = 0; i < dicetray[dice]; i++ ){
-        rolls += `${diceresult[i]}, `;
-        console.log(diceresult +' b');
+        if (i == dicetray[dice] - 1){
+          rolls += `${diceresult[i]}`;
+        }else{
+          rolls += `${diceresult[i]}, `;
+        }
       }
       diceresult.splice(0,dicetray[dice]);
       rolls += `</li>`;
@@ -66,7 +70,7 @@ function reset() {
    "d20": 0,
   };
   modifie = 0;
-  document.querySelector(`.modif`).value = modifie
+  document.querySelector(`.modif`).value = modifie;
   rolls = '';
   diceresult = [];
   document.querySelector('.hist').innerHTML = rolls;
