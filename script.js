@@ -13,7 +13,27 @@ function modifier() {
 }
 let diceresult = [];
 function dicenum(dicetype) {  
-  dicetray[dicetype]++;
+  switch(dicetype){
+    case "d4":
+      dicetray[dicetype]++;
+      break;
+    case "d6":
+      dicetray[dicetype]++;
+      break; 
+    case "d8":
+      dicetray[dicetype]++;
+      break;
+    case "d10":
+      dicetray[dicetype]++;
+      break;
+    case "d12":
+      dicetray[dicetype]++;
+      break;
+    case "d20":
+      dicetray[dicetype]++;
+      break;
+  }
+  //dicetray[dicetype]++;
   document.querySelector(`#${dicetype}`).innerHTML = dicetray[dicetype];
 };
 
@@ -80,3 +100,4 @@ function reset() {
     document.querySelector(`#${dice}`).innerHTML = dicetray[dice];
   }
 }
+
