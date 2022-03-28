@@ -37,12 +37,13 @@ function dicenum(dicetype) {
   document.querySelector(`#${dicetype}`).innerHTML = dicetray[dicetype];
 };
 
-let result = 0;
+var result = 0;
 function roll() {
   let total = 0;
   let i = 0;
   for (let dice in dicetray) {
-    for (let j = 0; j < dicetray[dice]; j++) {
+    total = diceroll(dice, i);
+    /*for (let j = 0; j < dicetray[dice]; j++) {
       if (i != 5) {
         result = Math.floor(Math.random() * (4 + (2 * i))) + 1;
       } else {
@@ -51,7 +52,7 @@ function roll() {
       total += result;
       diceresult.push(result);
       console.log(diceresult + ' a');
-    }
+    }*/
     i++;
   }
   modifie = document.querySelector(`.modif`).valueAsNumber;
@@ -59,6 +60,20 @@ function roll() {
   render();
   document.querySelector("#total").innerHTML = " + " + modifie + " = " + total;
 };
+function diceroll(dice, i){
+  let total = 0;
+  for (let j = 0; j < dicetray[dice]; j++) {
+      if (i != 5) {
+        result = Math.floor(Math.random() * (4 + (2 * i))) + 1;
+      } else {
+        result = Math.floor(Math.random() * (4 + (2 * 8))) + 1;
+      }
+      total += result;
+      diceresult.push(result);
+      console.log(diceresult + "a");
+    }
+  return total;
+}
 
 function render(){
   let rolls = '<ul>';
@@ -100,4 +115,3 @@ function reset() {
     document.querySelector(`#${dice}`).innerHTML = dicetray[dice];
   }
 }
-
