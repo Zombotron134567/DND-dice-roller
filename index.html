@@ -18,18 +18,25 @@
           <button class="baseStyle" onclick = "dicenum('d12')">D12</button><span class="baseStyle" id="d12">0</span>
           <button class="baseStyle" onclick = "dicenum('d20')">D20</button><span class="baseStyle" id="d20">0</span>
         </div>
-        <!-- Buttons -->
+        <!-- dice Buttons -->
           
         <div class = "container container--rolls">
           <div><input class="baseStyle modif" type= "number" value= "0"></input></div>
+          <!-- modifier input -->
           <div><button class="baseStyle baseStyle--mod" value="Modifier" onclick="modifier()">Reset Modifier</button></div>
+          <!-- modifier reset Button -->
           <div><button class="baseStyle baseStyle--roll" onclick ="roll()">Roll</button></div>
+          <!-- roll button -->
           <div><section class ="baseStyle hist"></section></div>
+          <!-- the window that shows individual dice result -->
           <div class="results"><span class="baseStyle results" id="total">0</span></div>
+          <!-- shows the total result and the modifier being added-->
           <div><button class="baseStyle baseStyle--reset" onclick = "reset()">Reset</button></div>
+          <!-- resets everything -->
         </div>
       </div>
     <script src="script.js"></script>
+    <!-- the script that is being used -->
   </body>
   <footer><div>DNDroller</div></footer>
 </html>
